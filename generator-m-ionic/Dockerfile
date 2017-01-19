@@ -15,11 +15,16 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get update && \
     apt-get install -y nodejs
 
+#Update npm
+RUN npm install -g npm
+#RUN npm update minimatch
+#RUN npm -v minimatch
+
 # Install Cordova Ionic
 RUN npm install -g cordova ionic
 
-#RUN npm update minimatch
-#RUN npm -v minimatch
+#Install Generator-M-ionic
+RUN npm install --global generator-m-ionic bower yo gulp
     
 # Open port 8000 for ionic
 EXPOSE 8000
